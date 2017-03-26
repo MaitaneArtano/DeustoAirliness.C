@@ -4,6 +4,7 @@
 
 void clear_if_needed(char *str);
 int validacion();
+int comprobarUsuario(); //Devolvera 1 en caso de que el trabajador exista en el fichero
 
 void menuPrincipal()
 {
@@ -68,6 +69,30 @@ int validacion()
 		}
 	}while(opcion != 3);
 	return DNI;
+}
+
+//funcion SIN COMPROBAAAAR!!!
+int comprobarUsuario(int DNI) //Devolvera 1 en caso de que el trabajador exista en el fichero
+{
+	FILE *file;
+	char str[200];
+	int DNI2;
+	file = fopen("trabajador.txt", "r");
+	if(file == 0)
+	{
+		printf("No hay trabajadores registrados\n");
+	}else
+	{
+		printf("Comprobando trabajadores...\n");
+		do
+		{
+			sscanf(str, "%i", DNI2);
+        	if(DNI == DNI2)
+        	{
+        		//Señal de que ha encontrado en fichero un DNI igual
+        	}
+		}while(fgets(str, 200, fichero));
+	}
 }
 
 /**
