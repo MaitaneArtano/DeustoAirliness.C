@@ -24,5 +24,6 @@ typedef struct
 }Tarea;
 
 void menuPrincipal();
+int validacion();
 
 #endif 

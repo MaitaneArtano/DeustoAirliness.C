@@ -3,6 +3,7 @@
 #include "estructuras.h"
 
 void clear_if_needed(char *str);
+int validacion();
 
 void menuPrincipal()
 {
@@ -21,11 +22,52 @@ void menuPrincipal()
 		printf("6.- Consultar trabajadores\n");
 		printf("7.- Agenda de trabajo\n");
 		printf("8.- Salir\n");
-		fgets(str, 20, stdin);
-		clear_if_needed(str);
-		ok = sscanf(str, "%d", &opcion);
-		printf("\n");
+		scanf("%d", &opcion);
+		switch(opcion)
+		{
+
+		}
 	}while(ok==0 && (ok>0 && (opcion<1 || opcion>8)));
+}
+
+//
+int validacion()
+{
+	int opcion;
+	int DNI;
+	int existe; //Sera 0 en caso de que el trabajador no exista en fichero
+	do
+	{
+		printf("Bienvenido a DeustoAirlines, escoja como quiere conectarse\n");
+		printf("1.- Log in\n");
+		printf("2.- Registrarse\n");
+		printf("3.- Salir\n");
+		scanf("%i", &opcion);
+		switch(opcion)
+		{
+			case 1:
+				/*printf("Introduzca el DNI sin letra:\n");
+				scanf("%i", &DNI);
+				existe = existeTrabajador(DNI);
+				if(existe == 0)
+				{
+					printf("El DNI introducido no corresponde a ningun trabajador\n");
+				}
+				break;*/
+				printf("Ha intentado hacer log in\n");
+				break;
+			case 2:
+				printf("Ha intentado registrarse\n");
+				break;
+			case 3:
+				printf("Adios!\n");
+				break;
+			default:
+				printf("La opcion introducida no corresponde a nada\n");
+				break;
+		}
+	}while(opcion != 3);
+	return DNI;
 }
 
 /**
