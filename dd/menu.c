@@ -53,8 +53,8 @@ int validacion()
 				if(existe == 0)
 				{
 					printf("El DNI introducido no corresponde a ningun trabajador\n");
-				}
-				break;*/
+				}*/
+				break;
 				printf("Ha intentado hacer log in\n");
 				break;
 			case 2:
@@ -91,7 +91,7 @@ int comprobarUsuario(int DNI) //Devolvera 1 en caso de que el trabajador exista 
         	{
         		//Señal de que ha encontrado en fichero un DNI igual
         	}
-		}while(fgets(str, 200, fichero));
+		}while(fgets(str, 200, file));
 	}
 }
 
