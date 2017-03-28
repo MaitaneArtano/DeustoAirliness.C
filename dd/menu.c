@@ -11,73 +11,47 @@ int comprobarUsuario(); //Devolvera 1 en caso de que el trabajador exista en el 
 void comprobarTrabajadorRegistrado();
 
 
-
-void comprobarTrabajadorRegistrado(Trabajador *Trabajador, int total)
+int comprobarTrabajadorRegistrado(int DNI) //Devolvera 0 si no existe el trabajador y 1 si existe
 {
-	char str[MAX_LENGTH];
-    char frmt_str[MAX_LENGTH];
+	FILE *fichero;
+	fichero = fopen("trabajador.txt", "r");
 
-    char DNI[10];
+	 char str[20];
+	 while(fgets(str, 20, fichero)) //Hay que poner un numero maximo dependiend del programa
+     {
+    	int dni;
+    	if(sscanf(str, "%d", &d) == 0) //Si sscanf no puede darle formato de integer --> Señal de que no es un numero
+    	{
+     	 	printf("Not a number!\n");
+   	    }
+    	else
+     	{
+      		//Señal de que es un numero comparamos con el DNI introducido
+      		if(dni == DNI)
+      		{
+      			printf("Trabajador encontrado\n");
+      			return 1;
+      		}else
+      		{
+      			printf("Trabajador no encontrado\n");
+      			return 0;
+      		}
+    	}
+    	clear_if_needed(str);
+  }
 
-    printf("");
-    fgets(str, MAX_LENGTH, stdin);
-    clear_if_neededC(str);
 
-
-    printf ("DNI de usuario: ");
-    fgets(str, MAX_LENGTH, stdin);
-    clear_if_neededC(str);
-    sscanf(str, "%s", frmt_str);
-
-    //nombre = (char *)malloc((strlen(frmt_str) + 1) * sizeof  (char));
-    //strlen: longitud de la cadena de frmt_str sin /0, por ello, le metemos un +1.
-    strcpy(DNI, frmt_str); //STRING COPY
-
-    printf ("Contrasenya de trabajador: ");
-    fgets(str, MAX_LENGTH, stdin);
-    clear_if_neededC(str);
-    sscanf(str, "%s", frmt_str);
-
-    strcat(DNI,"#"); //STRING COPY
-    strcat(DNI, frmt_str); //STRING COPY
-    
-    //LONGITUD DEL NOMBRE
-    int longDNI = 0;
-    longDNI = largo_cadena(DNI);
-
-    int i = 0;
-    FILE *fichero;
-    char c;
-
-    fichero = fopen("trabajador.txt", "r");
-  
-    int contar = 0;
-
-    int result = 0;
-
-    char read[100];
-    char DNI2[100];
-
-    while(fgets(read, 100, fichero)) 
-    {
-
-        sscanf(read, "%s", DNI2);
-  
-        if(strcmp(DNI, DNI2)==0)
-        {
-        
-        }
-        
-     }
-
+  //cerrar fichero
+  fclose(f);
+}
 
 
 int validacion()
 {
 	int opcion;
 	int DNI;
+	int correcto;
 	int existe; //Sera 0 en caso de que el trabajador no exista en fichero
-	Trabajador u[50];
 
 	FILE *fichero;
 	do
@@ -99,19 +73,22 @@ int validacion()
 
                    else
                     {
-                        comprobarTrabajadorRegistrado(&u[total], total);
-                            
-                        
+                    	do
+                    	{
+                    		printf("Introduzca el DNI del trabajador (sin letra):\n");
+                        	correcto = sscanf(str, "%d", &DNI);
+                    	}while(correcto!=0);
+                    	existe = comprobarTrabajadorRegistrado(DNI);//Se comprueba solo si el DNI existe o no
+                    	if(existe == 0)
+                    	{
+                    		printf("El DNI introducido no corresponde a ningun trabajador\n");
+                    	}
+                    	else
+                    	{
+                    		printf("El DNI introducido corresponde al siguiente trabajador\n");
+                    		//HACER METODO PARA DEVOLVER LA INFORMACION DEL TRABAJADOR
+                    	}
                     }
-
-				/*printf("Introduzca el DNI sin letra:\n");
-				scanf("%i", &DNI);
-				existe = existeTrabajador(DNI);
-				if(existe == 0)
-				{
-					printf("El DNI introducido no corresponde a ningun trabajador\n");
-				}*/
-				break;
 				printf("Ha intentado hacer log in\n");
 				break;
 			case 2:
