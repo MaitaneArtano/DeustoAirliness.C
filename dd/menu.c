@@ -14,15 +14,11 @@ void comprobarTrabajadorRegistrado();
 
 void comprobarTrabajadorRegistrado(Trabajador *Trabajador, int total)
 {
-
-	 // SE COMPRUEBA EL NOMBRE DEL TRABAJADOR
-
 	char str[MAX_LENGTH];
     char frmt_str[MAX_LENGTH];
 
     char DNI[10];
 
-    //GALDETU HAU!
     printf("");
     fgets(str, MAX_LENGTH, stdin);
     clear_if_neededC(str);
@@ -33,7 +29,7 @@ void comprobarTrabajadorRegistrado(Trabajador *Trabajador, int total)
     clear_if_neededC(str);
     sscanf(str, "%s", frmt_str);
 
-  //  nombre = (char *)malloc((strlen(frmt_str) + 1) * sizeof  (char));
+    //nombre = (char *)malloc((strlen(frmt_str) + 1) * sizeof  (char));
     //strlen: longitud de la cadena de frmt_str sin /0, por ello, le metemos un +1.
     strcpy(DNI, frmt_str); //STRING COPY
 
@@ -45,8 +41,6 @@ void comprobarTrabajadorRegistrado(Trabajador *Trabajador, int total)
     strcat(DNI,"#"); //STRING COPY
     strcat(DNI, frmt_str); //STRING COPY
     
-
-
     //LONGITUD DEL NOMBRE
     int longDNI = 0;
     longDNI = largo_cadena(DNI);
@@ -64,24 +58,20 @@ void comprobarTrabajadorRegistrado(Trabajador *Trabajador, int total)
     char read[100];
     char DNI2[100];
 
-    while(fgets(read, 100, fichero)) {
+    while(fgets(read, 100, fichero)) 
+    {
 
         sscanf(read, "%s", DNI2);
-
-       
-        
-
-        //strcmp ez zuen funtzionatzen beraz horrela egin dugu
-        if(strcmp(DNI, DNI2)==0){
-
-        menua(DNI);
+  
+        if(strcmp(DNI, DNI2)==0)
+        {
         
         }
         
      }
 
 
-//
+
 int validacion()
 {
 	int opcion;
