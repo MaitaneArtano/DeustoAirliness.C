@@ -25,7 +25,6 @@ typedef struct
 
 void menuPrincipal();
 int validacion();
-int comprobarUsuario(); //Devolvera 1 en caso de que el trabajador exista en el fichero
-void comprobarTrabajadorRegistrado();
+int  comprobarTrabajadorRegistrado(); //Devolvera 0 si no existe el trabajador y 1 si existe
 
 #endif 

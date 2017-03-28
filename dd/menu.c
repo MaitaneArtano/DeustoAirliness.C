@@ -7,20 +7,19 @@
 
 void clear_if_needed(char *str);
 int validacion();
-int comprobarUsuario(); //Devolvera 1 en caso de que el trabajador exista en el fichero
-void comprobarTrabajadorRegistrado();
+int comprobarTrabajadorRegistrado(); //Devolvera 0 si no existe el trabajador y 1 si existe
 
 
 int comprobarTrabajadorRegistrado(int DNI) //Devolvera 0 si no existe el trabajador y 1 si existe
 {
 	FILE *fichero;
-	fichero = fopen("trabajador.txt", "r");
+	fichero = fopen("trabajador.txt", "r"); //No compruebo si el archivo existe o no porque si existiera no entraria en este metodo
 
 	 char str[20];
 	 while(fgets(str, 20, fichero)) //Hay que poner un numero maximo dependiend del programa
      {
     	int dni;
-    	if(sscanf(str, "%d", &d) == 0) //Si sscanf no puede darle formato de integer --> Señal de que no es un numero
+    	if(sscanf(str, "%d", &dni) == 0) //Si sscanf no puede darle formato de integer --> Señal de que no es un numero
     	{
      	 	printf("Not a number!\n");
    	    }
@@ -40,9 +39,8 @@ int comprobarTrabajadorRegistrado(int DNI) //Devolvera 0 si no existe el trabaja
     	clear_if_needed(str);
   }
 
-
   //cerrar fichero
-  fclose(f);
+  fclose(fichero);
 }
 
 
@@ -52,6 +50,7 @@ int validacion()
 	int DNI;
 	int correcto;
 	int existe; //Sera 0 en caso de que el trabajador no exista en fichero
+	char str[20];
 
 	FILE *fichero;
 	do
@@ -76,6 +75,8 @@ int validacion()
                     	do
                     	{
                     		printf("Introduzca el DNI del trabajador (sin letra):\n");
+                    		fgets(str, 20, stdin);
+                    		clear_if_needed(str);
                         	correcto = sscanf(str, "%d", &DNI);
                     	}while(correcto!=0);
                     	existe = comprobarTrabajadorRegistrado(DNI);//Se comprueba solo si el DNI existe o no
