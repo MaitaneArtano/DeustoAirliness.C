@@ -88,10 +88,10 @@ int IntroducirVuelo(Vuelo *vuelo, int total){
 
 
 
-int EscribirEnFicheroVuelo (Tarea *t, int total, char *nombre){
+int EscribirEnFicheroVuelo (Vuelo *v, int total, char *nombre){
 
 	char *x;
-    x = "Tarea";
+    x = "Vuelo";
 
     char *p;
     p = ".txt";
@@ -109,16 +109,16 @@ int EscribirEnFicheroVuelo (Tarea *t, int total, char *nombre){
 	fichero = fopen(nombreFichero, "a");
 
 
-		fprintf(fichero, "%i/", t[total].fecha.dia);
-		fprintf(fichero, "%i/", t[total].fecha.mes);
-		fprintf(fichero, "%i\n", t[total].fecha.anyo);
-		fprintf(fichero, "%s\n", t[total].descp);
+		fprintf(fichero, "%s/", t[total].origen);
+		fprintf(fichero, "%s/", t[total].destino);
+		fprintf(fichero, "%s\n", t[total].fecha);
+		fprintf(fichero, "%f\n", t[total].precio);
 
 
 
 	fclose(fichero);
 
-	printf("TAREA GUARDADA!\n");
+	printf("¡VUELO GUARDADO!\n");
 	printf("\n");
 
     return 0;
