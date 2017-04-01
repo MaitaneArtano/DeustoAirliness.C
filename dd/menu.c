@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <string.h>
-#include "estructuras.h"
 #include <stdlib.h>
+#include "estructuras.h"
+
 
 #define MAX_LENGTH 10
 #define NUM_ELEMENTOS 2
@@ -80,6 +81,7 @@ int validacion()
                     		clear_if_needed(str);
                         	correcto = sscanf(str, "%d", &DNI);
                     	}while(correcto!=0);
+
                     	existe = comprobarTrabajadorRegistrado(DNI);//Se comprueba solo si el DNI existe o no
                     	if(existe == 0)
                     	{

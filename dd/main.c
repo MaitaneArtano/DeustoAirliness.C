@@ -6,8 +6,10 @@
 
 int main(void)
 {
+	menuPrincipal();
 	int existe;
 	existe = validacion();//Primer menu donde el trabajador debera registrarse o hacer login
-	menuPrincipal();
+	
+	
 	return 0;
 }// 
