@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "estructuras.h"
+#include <stdlib.h>
 
 #define MAX_LENGTH 10
 #define NUM_ELEMENTOS 2
@@ -10,7 +11,7 @@ int validacion();
 int comprobarTrabajadorRegistrado(); //Devolvera 0 si no existe el trabajador y 1 si existe
 
 
-int comprobarTrabajadorRegistrado(int DNI) //Devolvera 0 si no existe el trabajador y 1 si existe
+int comprobarTrabajadorRegistrado(Trabajador *trabajador, int DNI) //Devolvera 0 si no existe el trabajador y 1 si existe
 {
 	FILE *fichero;
 	fichero = fopen("trabajador.txt", "r"); //No compruebo si el archivo existe o no porque si existiera no entraria en este metodo
