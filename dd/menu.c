@@ -153,6 +153,17 @@ void menuPrincipal()
 		scanf("%d", &opcion);
 		switch(opcion)
 		{
+			case 1:
+			break;
+
+			case 2:
+			break;
+
+			case 3:
+			printf("Ha escogido crear un nuevo vuelo: \n");
+
+			
+			break;
 
 		}
 	}while(ok==0 && (ok>0 && (opcion<1 || opcion>8)));
