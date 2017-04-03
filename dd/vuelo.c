@@ -57,11 +57,11 @@ int IntroducirVuelo(Vuelo *vuelo, int total){
 
      //FECHA
     char str_fecha[MAX_LENGTH_FECHA];
-    char frmt_str_descp[MAX_LENGTH_FECHA];
+    char frmt_str_fecha[MAX_LENGTH_FECHA];
 
     printf("Destino del vuelo: \n");
     fgets(str_fecha, MAX_LENGTH_FECHA, stdin);
-    clear_if_neededT(str_descp);
+    clear_if_neededT(str_fecha);
     sscanf(str_fecha, "%[^\n]s", frmt_str_fecha); //%%[^\n]s -> para que deje escribir espacios
 
     //RESERVAR LA MEMORIA JUSTA PARA LA CADENA ALMACENADA
