@@ -9,7 +9,7 @@
 //int EscribirEnFicheroVuelo (Vuelo *v1, int total, char *nombre);
 int IntroducirVuelo(Vuelo *v1, int NUM_VUELOS);
 void clear_if_needed(char *str);
-void liberarMemoriaContacto(Vuelo *v, int NUM_VUELOS);
+//void liberarMemoriaContacto(Vuelo *v, int NUM_VUELOS);
 
 
 
