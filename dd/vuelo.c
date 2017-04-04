@@ -12,8 +12,6 @@ void clear_if_needed(char *str);
 //void liberarMemoriaContacto(Vuelo *v, int NUM_VUELOS);
 
 
-
-
 int IntroducirVuelo(Vuelo *v1, int NUM_VUELOS)
 {
     char str[MAX_LENGTH];
@@ -23,7 +21,7 @@ int IntroducirVuelo(Vuelo *v1, int NUM_VUELOS)
     clear_if_needed(str);
     sscanf(str, "%d", &v1->cod_vuelo);
 
-    printf("El codigo de vuelo es: %d \n", v1[NUM_VUELOS].cod_vuelo);
+    printf("El codigo de vuelo es: %d \n",v1[NUM_VUELOS].cod_vuelo); // 
 }
 
 
