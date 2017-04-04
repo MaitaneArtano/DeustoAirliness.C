@@ -61,19 +61,29 @@ void menuPrincipal()
 	}while(opcion!=6);
 }
 
-int validacion(int DNI)
+int validacion(int DNI)//Devuelve 1 en caso de que exista, -1 si no hay trabajadores y 0 si no coincide con ningun trabajador
 {
 	printf("Dentro de validacion el DNI recibido es: %d \n", DNI);
 	FILE *fichero;
 	fichero = fopen("trabajador.txt", "r");
+	char r[50];
+	int DNI2; //El DNI que se lee desde el fichero
 	if(fichero==NULL)
 	{
-		printf("No hay trabajadores registrados\n");
 		return -1; //Devuelve -1 como senyal de que no hay trabajadores registrados
-
 	}else
 	{
+		while(fgets(r, 50, fichero))
+		{
 
+        	sscanf(r, "%d", &DNI2);
+			if(DNI==DNI2)
+			{
+				printf("Trabajador encontrado!\n");
+        		return 1; //En caso de que el DNI introducido coincida con el de algun trabajador      
+        	}
+     	}
+		return 0; //En caso de que el DNI NO coincida con el de ningun trabajador
 	}
 }
 
