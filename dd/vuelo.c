@@ -3,31 +3,34 @@
 #include <stdlib.h>
 #include "estructuras.h"
 
+#define NUMVUELOS 20
+#define MAX_LENGTH 20
 
-int EscribirEnFicheroVuelo (Vuelo *v1, int total, char *nombre);
+//int EscribirEnFicheroVuelo (Vuelo *v1, int total, char *nombre);
+int IntroducirVuelo(Vuelo *v1, int NUM_VUELOS);
 void clear_if_needed(char *str);
 void liberarMemoriaContacto(Vuelo *v, int NUM_VUELOS);
 
 
 int IntroducirVuelo(Vuelo *v1, int NUM_VUELOS)
 {
-    char *str;
+    char str[MAX_LENGTH];
 
     printf("\nIntroduzca el codigo del vuelo:\n");
-    fgets(str, 20, stdin);
+    fgets(str, NUMVUELOS, stdin);
     clear_if_needed(str);
     sscanf(str, "%d", &v1->cod_vuelo);
 
-    printf("El codigo de vuelo es: %d \n", v1[0].cod_vuelo);
+    printf("El codigo de vuelo es: %d \n", v1[NUM_VUELOS].cod_vuelo);
 }
 
 
 
 
-int EscribirEnFicheroVuelo (Vuelo *v1, int total, char *nombre)
+/*int EscribirEnFicheroVuelo (Vuelo *v1, int total, char *nombre)
 {
 
-}
+}*/
 
 
 
@@ -40,7 +43,7 @@ void clear_if_needed(char *str)
     }
 }
 
-void liberarMemoriaContacto(Vuelo *v, int NUM_VUELOS)
+/*void liberarMemoriaContacto(Vuelo *v, int NUM_VUELOS)
 {
     for (int i = 0; i <NUM_VUELOS; i++)
     {
@@ -51,4 +54,4 @@ void liberarMemoriaContacto(Vuelo *v, int NUM_VUELOS)
         free(v[i].precio);
     }     
         
-}
+}*/

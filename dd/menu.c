@@ -30,8 +30,10 @@ void menuPrincipal()
 		{
 			case 1:
 				printf("Ha escogido crear un nuevo vuelo. \n");
-				IntroducirVuelo(&v[1], 1);
+				IntroducirVuelo(&v[0], 0);
+
 				break;
+				
 
 			case 2:
 				printf("Ha escogido cancelar un vuelo.\n");
