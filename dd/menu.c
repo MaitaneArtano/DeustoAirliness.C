@@ -77,11 +77,8 @@ int validacion()
 					printf("Introduzca el DNI del trabajador (Sin letra):\n");
                 	fgets(str, 8, stdin);
                 	clear_if_needed(str);
-                	sscanf(str, "%d", DNI);
-                	
-
-                	
-          			comprobarTrabajador(DNI);
+                	sscanf(str, "%d", &DNI);
+                	comprobarTrabajador(DNI);
                 }
 				printf("Ha intentado hacer log in\n");
 				break;
