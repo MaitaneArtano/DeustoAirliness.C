@@ -25,8 +25,6 @@ typedef struct
 }Tarea;
 
 void menuPrincipal();
-int validacion();
-int  comprobarTrabajadorRegistrado(); //Devolvera 0 si no existe el trabajador y 1 si existe
 void clear_if_neededC (char *str);
 
 #endif 
