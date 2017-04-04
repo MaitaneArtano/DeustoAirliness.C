@@ -4,16 +4,17 @@
 #include <string.h>
 #include <stdlib.h>
 
+#define MAX_LEN 9
 
 int main(void)
 {
 	int existe;
 	int DNI;
-	char str[9];
+	char str[MAX_LEN];
 
 	printf("Bienvenido a DeustoAirlines!\n");
 	printf("Introduzca el DNI del trabajador con el que quiere acceder (sin Letra):\n");
-	fgets(str, 9, stdin);
+	fgets(str, MAX_LEN, stdin);
 	clear_if_needed(str);
 	sscanf(str, "%d", &DNI);
 	printf("El DNI introducido es: %d \n", DNI);

@@ -12,6 +12,8 @@ void clear_if_needed(char *str);
 void liberarMemoriaContacto(Vuelo *v, int NUM_VUELOS);
 
 
+
+
 int IntroducirVuelo(Vuelo *v1, int NUM_VUELOS)
 {
     char str[MAX_LENGTH];
@@ -43,7 +45,9 @@ void clear_if_needed(char *str)
     }
 }
 
-/*void liberarMemoriaContacto(Vuelo *v, int NUM_VUELOS)
+
+/*
+void liberarMemoriaContacto(Vuelo *v, int NUM_VUELOS)
 {
     for (int i = 0; i <NUM_VUELOS; i++)
     {
@@ -54,4 +58,4 @@ void clear_if_needed(char *str)
         free(v[i].precio);
     }     
         
-}*/
+} */

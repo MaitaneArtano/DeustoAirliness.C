@@ -5,7 +5,7 @@
 #include "vuelo.c"
 
 #define NUM_VUELOS 30
-
+#define MM 30
 
 int validacion(int DNI);
 
@@ -13,7 +13,7 @@ int validacion(int DNI);
 void menuPrincipal()
 {
 	Vuelo v[NUM_VUELOS];
-	char *str;
+	char str[MM];
 	int opcion;
 	int ok; //Para comprobar si scanf me puede formatear o no lo introducido a un entero
 	do
@@ -30,10 +30,10 @@ void menuPrincipal()
 		{
 			case 1:
 				printf("Ha escogido crear un nuevo vuelo. \n");
-				IntroducirVuelo(&v[0], 0);
+				IntroducirVuelo(&v[1], NUM_VUELOS); //&v[0], 0
 
 				break;
-				
+
 
 			case 2:
 				printf("Ha escogido cancelar un vuelo.\n");
