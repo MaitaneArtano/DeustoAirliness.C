@@ -9,7 +9,8 @@
 #define MAX_LENGTH_FECHA 100
 
 
-void clear_if_neededT (char *str){
+void clear_if_neededT (char *str)
+{
 
     if (str[strlen(str) - 1] != '\n'){
         int c;

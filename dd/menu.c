@@ -73,11 +73,15 @@ int validacion()
                 }
 				else
                 {
-                	printf("Introduzca el DNI del trabajador (Sin letra):\n");
+
+					printf("Introduzca el DNI del trabajador (Sin letra):\n");
                 	fgets(str, 8, stdin);
                 	clear_if_needed(str);
-                	sscanf(str, "%d", &DNI);
-                    comprobarTrabajador(DNI);
+                	sscanf(str, "%d", DNI);
+                	
+
+                	
+          			comprobarTrabajador(DNI);
                 }
 				printf("Ha intentado hacer log in\n");
 				break;
@@ -97,6 +101,11 @@ int validacion()
 //funcion SIN COMPROBAAAAR!!!
 int comprobarTrabajador(int DNI) //Devolvera 1 en caso de que el trabajador exista en el fichero
 {
+
+
+
+
+
 	printf("El DNI recibido es: %i \n", DNI);
 	FILE *file;
 	char str[200];
