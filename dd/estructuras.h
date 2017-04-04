@@ -4,7 +4,6 @@
 typedef struct
 {
 	int DNI;
-	
 	char *nombre;
 	char *apellido;
 	char *puesto; 
@@ -12,6 +11,7 @@ typedef struct
 
 typedef struct 
 {
+	int cod_vuelo;
 	char *origen;
 	char *destino;
 	char *fecha;
@@ -20,11 +20,15 @@ typedef struct
 
 typedef struct 
 {
-	char *DNI;
+	int DNI;
 	char *puesto;
 }Tarea;
 
 void menuPrincipal();
+int validacion(int DNI);
+int IntroducirVuelo(Vuelo *v1, int NUM_VUELOS);
+int EscribirEnFicheroVuelo (Vuelo *v1, int total, char *nombre);
 void clear_if_neededC (char *str);
+void liberarMemoriaContacto(Vuelo *v, int NUM_VUELOS);
 
 #endif 

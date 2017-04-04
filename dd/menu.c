@@ -2,24 +2,23 @@
 #include <string.h>
 #include <stdlib.h>
 #include "estructuras.h"
+#include "vuelo.c"
+
+#define NUM_VUELOS 30
 
 
-#define MAX_LENGTH 10
-#define NUM_ELEMENTOS 2
-
-void clear_if_needed(char *str);
 int validacion(int DNI);
 
 
 void menuPrincipal()
 {
-	char str[20];
+	Vuelo v[NUM_VUELOS];
+	char *str;
 	int opcion;
 	int ok; //Para comprobar si scanf me puede formatear o no lo introducido a un entero
-	printf("Bienvenido a DeustoAirlines!\n");
 	do
 	{
-		printf("Introduzca una de las siguientes opciones:\n");
+		printf("\nIntroduzca una de las siguientes opciones:\n");
 		printf("1.- Crear vuelo\n");
 		printf("2.- Cancelar vuelo\n");
 		printf("3.- Consultar vuelos\n");
@@ -31,6 +30,7 @@ void menuPrincipal()
 		{
 			case 1:
 				printf("Ha escogido crear un nuevo vuelo. \n");
+				IntroducirVuelo(&v[1], 1);
 				break;
 
 			case 2:
@@ -79,7 +79,6 @@ int validacion(int DNI)//Devuelve 1 en caso de que exista, -1 si no hay trabajad
         	sscanf(r, "%d", &DNI2);
 			if(DNI==DNI2)
 			{
-				printf("Trabajador encontrado!\n");
         		return 1; //En caso de que el DNI introducido coincida con el de algun trabajador      
         	}
      	}
@@ -87,16 +86,3 @@ int validacion(int DNI)//Devuelve 1 en caso de que exista, -1 si no hay trabajad
 	}
 }
 
-
-/**
-	Esta funcion elimina los caracteres pendientes si es necesario
-	Se usa junto con fgets para leer la entrada hasta cierta longitud
-*/
-void clear_if_needed(char *str)
-{
-	if (str[strlen(str) - 1] != '\n')
-	{
-		int c;    
-    	while ( (c = getchar()) != EOF && c != '\n');
-    }
-}

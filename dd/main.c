@@ -11,6 +11,7 @@ int main(void)
 	int DNI;
 	char str[9];
 
+	printf("Bienvenido a DeustoAirlines!\n");
 	printf("Introduzca el DNI del trabajador con el que quiere acceder (sin Letra):\n");
 	fgets(str, 9, stdin);
 	clear_if_needed(str);
@@ -19,14 +20,15 @@ int main(void)
 	existe = validacion(DNI);//Devuelve 1 en caso de que exista, -1 si no hay trabajadores y 0 si no coincide con ningun trabajador
 	if(existe==0)
 	{
-		printf("Main: El trabajador no coincide con ningun trabajador\n");
+		printf("El trabajador no coincide con ningun trabajador\n");
 	}if(existe==-1)
 	{
 		printf("No hay trabajadores\n");
 		return -1;
 	}if(existe==1)
 	{
-		printf("Main: Trabajador encontrado con DNI %d \n", DNI);
+		printf("\nTrabajador encontrado con DNI %d \n\n", DNI);
+		menuPrincipal();
 	}
 
 	return 0;
