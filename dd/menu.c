@@ -47,7 +47,7 @@ void menuPrincipal()
 
 			case 5:
 				printf("Ha escogido asignar tarea a trabajador. \n");
-				AsignarAgenda();
+				asignarTarea();
 				break;
 
 			case 6:
