@@ -36,7 +36,7 @@ void LeerTrabajadores()
 }
 
 
-int AsignarAgenda()
+int AsignarAgenda() // SIN TERMINAR
 {
     int DNI; 
     char str[MAX_LEN];
