@@ -86,6 +86,8 @@ void guardarEnFichero(int codigo, char *origen, char *destino, char *fecha, floa
     fprintf(fic, "Destino: %s\n", destino);
     fprintf(fic, "Fecha: %s\n", fecha);
     fprintf(fic, "Precio: %.2f\n\n", precio);
+    fprintf(fic, "------------------\n" );
+    fprintf(fic, "------------------\n" );
 
     fclose(fic);
 }

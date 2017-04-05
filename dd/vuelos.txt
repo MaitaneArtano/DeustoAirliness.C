@@ -1,24 +1,16 @@
-Codigo: 847453
+Codigo: 81928312
 Origen: Madrid
 Destino: Barcelona
-Fecha: 01/03/17
-Precio: 33.65
--------------------------
-Codigo: 9999212
-Origen: Beasain
-Destino: Donosti
-Fecha: 08/11/12
-Precio: 44.23
---------------------------
-Codigo: 11111111
-Origen: aaa
-Destino: bbb
-Fecha: 76/78/99
-Precio: 22.56
-------------------------
-Codigo: 2345678
-Origen: madrid
-Destino: barcelona
-Fecha: 34/45/67
-Precio: 34.67
+Fecha: 01/03/20
+Precio: 44.67
 
+------------------
+------------------
+Codigo: 938622
+Origen: Santander
+Destino: Miami
+Fecha: 11/01/82
+Precio: 782.34
+
+------------------
+------------------

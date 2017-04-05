@@ -41,7 +41,6 @@ int AsignarAgenda() // SIN TERMINAR
     int DNI; 
     char str[MAX_LEN];
 
-   
 
     printf("Introduzca el DNI del trabajador al que quiere asignar la tarea: \n" );
     do
@@ -50,11 +49,7 @@ int AsignarAgenda() // SIN TERMINAR
         fgets(str, MAX_LEN, stdin);
         clear_if_needed(str);
         sscanf(str, "%d", &DNI);
-
-
-
-    }
-    while(DNI==0);
+    }while(DNI==0);
 
 
 
