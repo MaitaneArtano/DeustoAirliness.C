@@ -27,8 +27,9 @@ typedef struct
 void menuPrincipal();
 int validacion(int DNI);
 int IntroducirVuelo(Vuelo *v1, int NUM_VUELOS);
+
 //int EscribirEnFicheroVuelo (Vuelo *v1, int total, char *nombre);
-void clear_if_neededC (char *str);
+void clear_if_needed(char *str);
 //void liberarMemoriaContacto(Vuelo *v, int NUM_VUELOS);
 
 #endif 
