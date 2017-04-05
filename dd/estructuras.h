@@ -2,13 +2,6 @@
 #define ESTRUCTURAS_H_
 
 
-
-typedef struct 
-{
-	int DNI;
-	char *puesto;
-}Tarea;
-
 void menuPrincipal();
 int validacion(int DNI);
 int IntroducirVuelo();
