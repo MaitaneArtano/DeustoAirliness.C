@@ -7,6 +7,8 @@
 
 
 void LeerTrabajadores();
+void clear_if_needed(char *str);
+int AsignarAgenda();
 
 
 void LeerTrabajadores()
@@ -34,14 +36,14 @@ void LeerTrabajadores()
 }
 
 
-void AsignarAgenda()
+int AsignarAgenda()
 {
     int DNI; 
     char str[MAX_LEN];
 
    
 
-     printf("Introduzca el DNI del trabajador al que quiere asignar la tarea: \n" );
+    printf("Introduzca el DNI del trabajador al que quiere asignar la tarea: \n" );
     do
     {
    
