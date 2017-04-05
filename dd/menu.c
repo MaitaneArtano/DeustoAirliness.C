@@ -37,6 +37,7 @@ void menuPrincipal()
 
 			case 3:
 				printf("Ha escogido consultar los vuelos existentes. \n");
+				LeerVuelos();
 				break;
 
 			case 4:
