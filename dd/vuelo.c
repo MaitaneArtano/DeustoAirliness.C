@@ -110,9 +110,6 @@ void LeerVuelos()
                 endfile = fscanf(fic, " %[^\n] \n", &str2);
             }
           
-            
-        
-
         fclose(fic);
     }
 }
