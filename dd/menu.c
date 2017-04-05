@@ -4,7 +4,6 @@
 #include "estructuras.h"
 
 
-
 int validacion(int DNI);
 
 
@@ -20,8 +19,9 @@ void menuPrincipal()
 		printf("2.- Cancelar vuelo\n");
 		printf("3.- Consultar vuelos\n");
 		printf("4.- Consultar trabajadores\n");
-		printf("5.- Agenda de trabajo\n");
-		printf("6.- Salir\n");
+		printf("5.- Asignar tarea a trabajador\n");
+		printf("6.- Ver agenda de trabajo\n");
+		printf("7.- Salir\n");
 		scanf("%d", &opcion);
 		switch(opcion)
 		{
@@ -46,10 +46,14 @@ void menuPrincipal()
 				break;
 
 			case 5:
-				printf("Ha escogido consultar la agenda de trabajo de los trabajadores. \n");
+				printf("Ha escogido asignar tarea a trabajador. \n");
+				AsignarAgenda();
 				break;
 
 			case 6:
+				printf("Ha escogido ver la lista de agenda de trabajo: \n" );
+				break;
+			case 7:
 				printf("Adios!\n");
 				break;
 
@@ -58,7 +62,7 @@ void menuPrincipal()
 				break;
 
 		}
-	}while(opcion!=6);
+	}while(opcion!=7);
 }
 
 int validacion(int DNI)//Devuelve 1 en caso de que exista, -1 si no hay trabajadores y 0 si no coincide con ningun trabajador

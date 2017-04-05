@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include "estructuras.h"
 
+#define MAX_LEN 9
+
 
 void LeerTrabajadores();
 
@@ -34,9 +36,30 @@ void LeerTrabajadores()
 
 void AsignarAgenda()
 {
+    int DNI; 
+    char str[MAX_LEN];
+
+   
+
+     printf("Introduzca el DNI del trabajador al que quiere asignar la tarea: \n" );
+    do
+    {
+   
+        fgets(str, MAX_LEN, stdin);
+        clear_if_needed(str);
+        sscanf(str, "%d", &DNI);
 
 
-    
+
+    }
+    while(DNI==0);
+
+
+
+   
+
+
+
 }
 
 
