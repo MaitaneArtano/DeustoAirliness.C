@@ -92,19 +92,26 @@ void guardarEnFichero(int codigo, char *origen, char *destino, char *fecha, floa
 
 void LeerVuelos()
 {
-    char str[MAX_LENGTH];
+    char *str;
     FILE *fic;
     fic = fopen("vuelos.txt", "r");
+    char str2[500];
+    int endfile=0;
 
     if(fic == NULL)
     {
         printf("No hay vuelos registrados");
     }else
     {
-        while (str, MAX_LENGTH, fic)
-        {
-            printf("%s\n", str);
-        }
+            endfile = fscanf(fic, " %[^\n] ", &str2);
+            while(endfile != EOF)
+            {
+                printf(" %s\n " , str2);
+                endfile = fscanf(fic, " %[^\n] \n", &str2);
+            }
+          
+            
+        
 
         fclose(fic);
     }
