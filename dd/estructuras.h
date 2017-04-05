@@ -19,6 +19,6 @@ void LeerTrabajadores();
 void asignarTarea();
 int validacionVuelo(int cod_vuelo);
 void guardarEnFic(int DNI, int codigo);
-
+void LeerAgenda();
 
 #endif 

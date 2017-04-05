@@ -76,7 +76,6 @@ void asignarTarea()
             sscanf(str1, "%i", &codigo);
         }while(codigo==0);
 
-        //HERE IS THE PROBLEEEEM!!! 0 bueltatzeo ta eluke ola izanbear 1 behardo izan, baino nola dao cod_vuelo gordeta??
         existe1=validacionVuelo(codigo);
         printf("Numero recibido en la validacion de vuelo %d\n", existe1);
         if(existe1==0)
@@ -91,7 +90,7 @@ void asignarTarea()
 
             printf("\n Guardando en fichero... \n");
             guardarEnFic( DNI, codigo);
-            printf("\n ¡¡VUELO GUARDADO!!\n");
+            printf("\n RELACION GUARDADA!!\n");
         }
     }
 
@@ -102,7 +101,7 @@ void guardarEnFic(int DNI, int codigo)
     FILE *fic;
     fic = fopen("agenda.txt", "a");
 
-    fprintf(fic, "El DNI del trabajador: %i\n", DNI);
+    fprintf(fic, "\n El DNI del trabajador es: %i\n", DNI);
     fprintf(fic, "El codigo del vuelo: %i\n", codigo);
     fprintf(fic, "------------------\n" );
     fprintf(fic, "------------------\n" );
@@ -113,6 +112,26 @@ void guardarEnFic(int DNI, int codigo)
 
 void LeerAgenda()
 {
+    //char *str3;
+    FILE *fic;
+    fic = fopen("agenda.txt", "r");
+    char str4[500];
+    int endfile=0;
+
+    if(fic == NULL)
+    {
+        printf("No hay trabajadores registrados");
+    }else
+    {
+            endfile = fscanf(fic, " %[^\n] ", &str4);
+            while(endfile != EOF)
+            {
+                printf(" %s\n " , str4);
+                endfile = fscanf(fic, " %[^\n] \n", &str4);
+            }
+          
+        fclose(fic);
+    }
 
 }
 

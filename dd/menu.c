@@ -52,7 +52,8 @@ void menuPrincipal()
 				break;
 
 			case 6:
-				printf("Ha escogido ver la lista de agenda de trabajo: \n" );
+				printf("\n Ha escogido ver la lista de agenda de trabajo: \n" );
+				LeerAgenda();
 				break;
 			case 7:
 				printf("Adios!\n");
