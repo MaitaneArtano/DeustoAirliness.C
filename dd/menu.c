@@ -33,7 +33,7 @@ void menuPrincipal()
 
 
 			case 2:
-				printf("Ha escogido cancelar un vuelo.\n");
+				printf("Esta funcion no se encuentra disponible en estos momentos.\n");
 				break;
 
 			case 3:
