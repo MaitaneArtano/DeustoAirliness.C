@@ -14,14 +14,18 @@ void clear_if_needed(char *str);
 
 int IntroducirVuelo(Vuelo *v1, int NUM_VUELOS)
 {
-    char str[MAX_LENGTH];
+    char str1[MAX_LENGTH];
 
     printf("\nIntroduzca el codigo del vuelo:\n");
-    fgets(str, NUMVUELOS, stdin);
-    clear_if_needed(str);
-    sscanf(str, "%d", &v1->cod_vuelo);
+    do
+    {
+        v1->cod_vuelo=0;
+        fgets(str1, 10, stdin);
+        clear_if_needed(str1);
+        sscanf(str1, "%d", &v1->cod_vuelo);
+    }while(&v1[NUM_VUELOS].cod_vuelo == 0);
 
-    printf("El codigo de vuelo es: %d \n",v1[NUM_VUELOS].cod_vuelo); // 
+    printf("El codigo de vuelo es: %s \n",str1);  
 }
 
 
