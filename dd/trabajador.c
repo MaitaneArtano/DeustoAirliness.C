@@ -3,12 +3,12 @@
 #include <stdlib.h>
 #include "estructuras.h"
 
-#define MAX_LEN 9
+#define MAX_LENGTH 20
 
 
 void LeerTrabajadores();
 void clear_if_needed(char *str);
-int AsignarAgenda();
+void asignarTarea();
 
 
 void LeerTrabajadores()
@@ -36,26 +36,59 @@ void LeerTrabajadores()
 }
 
 
-int AsignarAgenda() // SIN TERMINAR
+void asignarTarea()
 {
-    int DNI; 
-    char str[MAX_LEN];
+    int existe;
+    int existe1=20;
+    int codigo=0;
+    char str1[20];
+    int DNI=0;
+    printf("Lista de trabajadores disponibles:\n");
+    LeerTrabajadores();
 
-
-    printf("Introduzca el DNI del trabajador al que quiere asignar la tarea: \n" );
+    printf("\n\nEscriba el DNI del trabajador al que quieres asignar un puesto\n");
     do
     {
-   
-        fgets(str, MAX_LEN, stdin);
-        clear_if_needed(str);
-        sscanf(str, "%d", &DNI);
+        fgets(str1, 9, stdin);
+        clear_if_needed(str1);
+        sscanf(str1, "%i", &DNI);
     }while(DNI==0);
 
+    existe = validacion(DNI);//Devuelve 1 en caso de que exista, -1 si no hay trabajadores y 0 si no coincide con ningun trabajador
+    if(existe==0)
+    {
+        printf("El trabajador no coincide con ningun trabajador\n");
+    }if(existe==-1)
+    {
+        printf("No hay trabajadores\n");
+    }if(existe==1)
+    {
+        printf("\nTrabajador encontrado!\n");
+        printf("Lista de vuelos disponibles:\n");
+        LeerVuelos(); 
+        printf("Escriba el codigo del vuelo al que quieres asignar al trabajador\n");
 
+        do
+        {
+            fgets(str1, MAX_LENGTH, stdin);
+            clear_if_needed(str1);
+            sscanf(str1, "%i", &codigo);
+        }while(codigo==0);
 
-   
-
-
+        //HERE IS THE PROBLEEEEM!!! 0 bueltatzeo ta eluke ola izanbear 1 behardo izan, baino nola dao cod_vuelo gordeta??
+        existe1=validacionVuelo(codigo);
+        printf("Numero recibido en la validacion de vuelo %d\n", existe1);
+        if(existe1=0)
+        {
+            printf("El vuelo no coincide con ningun vuelo\n");
+        }if(existe1==-1)
+        {
+            printf("No hay vuelos registrados\n");
+        }if(existe1==1)
+        {
+            printf("\nVuelo encontrado!\n");
+        }
+    }
 
 }
 

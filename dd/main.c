@@ -16,7 +16,6 @@ int main(void)
 	fgets(str, MAX_LEN, stdin);
 	clear_if_needed(str);
 	sscanf(str, "%d", &DNI);
-	printf("El DNI introducido es: %d \n", DNI);
 	existe = validacion(DNI);//Devuelve 1 en caso de que exista, -1 si no hay trabajadores y 0 si no coincide con ningun trabajador
 	if(existe==0)
 	{

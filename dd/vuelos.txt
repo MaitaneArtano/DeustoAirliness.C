@@ -14,3 +14,19 @@ Precio: 782.34
 
 ------------------
 ------------------
+Codigo: 1111
+Origen: Beasain
+Destino: Donosti
+Fecha: 01/05/00
+Precio: 7.23
+
+------------------
+------------------
+Codigo: 222
+Origen: aaa
+Destino: bbb
+Fecha: 45/67/77
+Precio: 55.34
+
+------------------
+------------------

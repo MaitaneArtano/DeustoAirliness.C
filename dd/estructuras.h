@@ -1,22 +1,7 @@
 #ifndef ESTRUCTURAS_H_
 #define ESTRUCTURAS_H_
 
-typedef struct
-{
-	int DNI;
-	char *nombre;
-	char *apellido;
-	char *puesto; 
-}Trabajador;
 
-typedef struct 
-{
-	int cod_vuelo;
-	char *origen;
-	char *destino;
-	char *fecha;
-	float precio;
-}Vuelo;
 
 typedef struct 
 {
@@ -31,6 +16,7 @@ void clear_if_needed(char *str);
 void guardarEnFichero(int codigo, char *origen, char *destino, char *fecha, float precio);
 void LeerVuelos();
 void LeerTrabajadores();
-int asignarTarea();
+void asignarTarea();
+int validacionVuelo(int cod_vuelo);
 
 #endif 

@@ -24,7 +24,7 @@ int IntroducirVuelo() //Devolvera 1 en caso de que no se pueda o no se quiera es
     printf("\nIntroduzca el codigo del vuelo:\n");
     do
     {
-        fgets(str1, 10, stdin);
+        fgets(str1, 9, stdin);
         clear_if_needed(str1);
         sscanf(str1, "%d", &codigo);
     }while(codigo==0);
@@ -116,20 +116,3 @@ void LeerVuelos()
     }
 }
 
-
-
-
-
-/*
-void liberarMemoriaContacto(Vuelo *v, int NUM_VUELOS)
-{
-    for (int i = 0; i <NUM_VUELOS; i++)
-    {
-        free(v[i].cod_vuelo);
-        free(v[i].origen);
-        free(v[i].destino);
-        free(v[i].fecha);
-        free(v[i].precio);
-    }     
-        
-} */
