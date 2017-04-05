@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "estructuras.h"
-#include "menu.c"
 #include <string.h>
 #include <stdlib.h>
 
@@ -33,5 +32,14 @@ int main(void)
 	}
 
 	return 0;
+}
+
+void clear_if_needed(char *str)
+{
+
+    if (str[strlen(str) - 1] != '\n'){
+        int c;
+        while ((c = getchar()) != EOF && c != '\n');
+    }
 }
 

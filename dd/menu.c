@@ -2,19 +2,14 @@
 #include <string.h>
 #include <stdlib.h>
 #include "estructuras.h"
-#include "vuelo.c"
-#include "trabajador.c"
 
-#define NUM_VUELOS 30
-#define MM 30
+
 
 int validacion(int DNI);
 
 
 void menuPrincipal()
 {
-	Vuelo v[NUM_VUELOS];
-	char str[MM];
 	int opcion;
 	int ok; //Para comprobar si scanf me puede formatear o no lo introducido a un entero
 
@@ -32,7 +27,7 @@ void menuPrincipal()
 		{
 			case 1:
 				printf("Ha escogido crear un nuevo vuelo. \n");
-				IntroducirVuelo(&v[1], NUM_VUELOS); //&v[0], 0 // &v[1], NUM_VUELOS
+				IntroducirVuelo(); 
 				break;
 
 

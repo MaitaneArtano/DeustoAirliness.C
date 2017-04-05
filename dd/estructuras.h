@@ -1,5 +1,5 @@
-#ifndef _ESTRUCTURAS_H_
-#define _ESTRUCTURAS_H_
+#ifndef ESTRUCTURAS_H_
+#define ESTRUCTURAS_H_
 
 typedef struct
 {
@@ -26,10 +26,7 @@ typedef struct
 
 void menuPrincipal();
 int validacion(int DNI);
-int IntroducirVuelo(Vuelo *v1, int NUM_VUELOS);
-
-//int EscribirEnFicheroVuelo (Vuelo *v1, int total, char *nombre);
+int IntroducirVuelo();
 void clear_if_needed(char *str);
-//void liberarMemoriaContacto(Vuelo *v, int NUM_VUELOS);
 
 #endif 
