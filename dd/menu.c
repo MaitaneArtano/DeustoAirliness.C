@@ -98,7 +98,7 @@ int validacionVuelo(int cod_vuelo)//Devuelve 1 en caso de que exista, -1 si no h
 	int cod_vuelo2; //El DNI que se lee desde el fichero
 	if(fichero==NULL)
 	{
-		return -1; //Devuelve -1 como senyal de que no hay trabajadores registrados
+		return -1; //Devuelve -1 como senyal de que no hay vuelo registrados
 	}else
 	{
 		while(fgets(r, 50, fichero))
@@ -107,10 +107,10 @@ int validacionVuelo(int cod_vuelo)//Devuelve 1 en caso de que exista, -1 si no h
         	sscanf(r, "%d", &cod_vuelo2);
 			if(cod_vuelo==cod_vuelo2)
 			{
-        		return 1; //En caso de que el DNI introducido coincida con el de algun trabajador      
+        		return 1; //En caso de que el DNI introducido coincida con el de algun vuelo      
         	}
      	}
-		return 0; //En caso de que el DNI NO coincida con el de ningun trabajador
+		return 0; //En caso de que el DNI NO coincida con el de ningun vuelo
 	}
 }
 
