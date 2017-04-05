@@ -42,7 +42,7 @@ void menuPrincipal()
 
 			case 4:
 				printf("Ha escogido consultar los trabajadores existentes. \n");
-
+				LeerTrabajadores();
 				break;
 
 			case 5:
