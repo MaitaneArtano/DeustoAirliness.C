@@ -3,19 +3,19 @@ Origen: Madrid
 Destino: Barcelona
 Fecha: 01/03/17
 Precio: 33.65
-
+-------------------------
 Codigo: 9999212
 Origen: Beasain
 Destino: Donosti
 Fecha: 08/11/12
 Precio: 44.23
-
+--------------------------
 Codigo: 11111111
 Origen: aaa
 Destino: bbb
 Fecha: 76/78/99
 Precio: 22.56
-
+------------------------
 Codigo: 2345678
 Origen: madrid
 Destino: barcelona
