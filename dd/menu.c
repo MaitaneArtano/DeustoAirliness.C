@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include "estructuras.h"
 #include "vuelo.c"
+#include "trabajador.c"
 
 #define NUM_VUELOS 30
 #define MM 30
@@ -16,6 +17,7 @@ void menuPrincipal()
 	char str[MM];
 	int opcion;
 	int ok; //Para comprobar si scanf me puede formatear o no lo introducido a un entero
+
 	do
 	{
 		printf("\nIntroduzca una de las siguientes opciones:\n");
@@ -30,8 +32,7 @@ void menuPrincipal()
 		{
 			case 1:
 				printf("Ha escogido crear un nuevo vuelo. \n");
-				IntroducirVuelo(&v[1], NUM_VUELOS); //&v[0], 0
-
+				IntroducirVuelo(&v[1], NUM_VUELOS); //&v[0], 0 // &v[1], NUM_VUELOS
 				break;
 
 
@@ -45,6 +46,7 @@ void menuPrincipal()
 
 			case 4:
 				printf("Ha escogido consultar los trabajadores existentes. \n");
+
 				break;
 
 			case 5:
@@ -87,4 +89,7 @@ int validacion(int DNI)//Devuelve 1 en caso de que exista, -1 si no hay trabajad
 		return 0; //En caso de que el DNI NO coincida con el de ningun trabajador
 	}
 }
+
+
+
 

@@ -15,6 +15,8 @@ void clear_if_neededT (char *str)
         while ((c = getchar()) != EOF && c != '\n');
     }
 
+
+
 int IntroducirVuelo(Trabajador *Trabajador, int total)
 {
 	char str[MAX_LENGTH];
