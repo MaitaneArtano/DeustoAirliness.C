@@ -1,32 +1,16 @@
-Codigo: 81928312
-Origen: Madrid
-Destino: Barcelona
-Fecha: 01/03/20
-Precio: 44.67
+343434
+san
+mallorca
+23/23/20
+23.45
 
 ------------------
 ------------------
-Codigo: 938622
-Origen: Santander
-Destino: Miami
-Fecha: 11/01/82
-Precio: 782.34
-
-------------------
-------------------
-Codigo: 1111
-Origen: Beasain
-Destino: Donosti
-Fecha: 01/05/00
-Precio: 7.23
-
-------------------
-------------------
-Codigo: 222
-Origen: aaa
-Destino: bbb
-Fecha: 45/67/77
-Precio: 55.34
+232323
+bilbao
+noruega
+12/12/12
+89.89
 
 ------------------
 ------------------

@@ -81,11 +81,11 @@ void guardarEnFichero(int codigo, char *origen, char *destino, char *fecha, floa
     FILE *fic;
     fic = fopen("vuelos.txt", "a");
 
-    fprintf(fic, "Codigo: %i\n", codigo);
-    fprintf(fic, "Origen: %s\n", origen);
-    fprintf(fic, "Destino: %s\n", destino);
-    fprintf(fic, "Fecha: %s\n", fecha);
-    fprintf(fic, "Precio: %.2f\n\n", precio);
+    fprintf(fic, "%i\n", codigo);
+    fprintf(fic, "%s\n", origen);
+    fprintf(fic, "%s\n", destino);
+    fprintf(fic, "%s\n", fecha);
+    fprintf(fic, "%.2f\n\n", precio);
     fprintf(fic, "------------------\n" );
     fprintf(fic, "------------------\n" );
 
@@ -115,4 +115,5 @@ void LeerVuelos()
         fclose(fic);
     }
 }
+
 

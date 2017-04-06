@@ -1,0 +1,29 @@
+
+ El DNI del trabajador es: 72545454
+El codigo del vuelo: 232323
+------------------
+------------------
+
+ El DNI del trabajador es: 72545454
+El codigo del vuelo: 232323
+La descripcion de la tarea es: Va
+------------------
+------------------
+
+ El DNI del trabajador es: 73606060
+El codigo del vuelo: 343434
+La descripcion de la tarea es: Atender
+------------------
+------------------
+
+ El DNI del trabajador es: 73606060
+El codigo del vuelo: 343434
+La descripcion de la tarea es: jadjasoda
+------------------
+------------------
+
+ El DNI del trabajador es: 75645324
+El codigo del vuelo: 232323
+La descripcion de la tarea es: sjdasdjiasdjoiasddm
+------------------
+------------------

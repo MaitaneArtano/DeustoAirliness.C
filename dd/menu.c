@@ -3,10 +3,8 @@
 #include <stdlib.h>
 #include "estructuras.h"
 
-
 int validacion(int DNI);
 int validacionVuelo(int cod_vuelo);
-
 
 void menuPrincipal()
 {
@@ -17,12 +15,11 @@ void menuPrincipal()
 	{
 		printf("\nIntroduzca una de las siguientes opciones:\n");
 		printf("1.- Crear vuelo\n");
-		printf("2.- Cancelar vuelo\n");
-		printf("3.- Consultar vuelos\n");
-		printf("4.- Consultar trabajadores\n");
-		printf("5.- Asignar tarea a trabajador\n");
-		printf("6.- Ver agenda de trabajo\n");
-		printf("7.- Salir\n");
+		printf("2.- Consultar vuelos\n");
+		printf("3.- Consultar trabajadores\n");
+		printf("4.- Asignar tarea a trabajador\n");
+		printf("5.- Ver agenda de trabajo\n");
+		printf("6.- Salir\n");
 		scanf("%d", &opcion);
 		switch(opcion)
 		{
@@ -31,30 +28,26 @@ void menuPrincipal()
 				IntroducirVuelo(); 
 				break;
 
-
 			case 2:
-				printf("Ha escogido cancelar un vuelo.\n");
-				break;
-
-			case 3:
 				printf("Ha escogido consultar los vuelos existentes. \n");
 				LeerVuelos();
 				break;
 
-			case 4:
+			case 3:
 				printf("Ha escogido consultar los trabajadores existentes. \n");
 				LeerTrabajadores();
 				break;
 
-			case 5:
+			case 4:
 				printf("Ha escogido asignar tarea a trabajador. \n");
 				asignarTarea();
 				break;
 
-			case 6:
-				printf("Ha escogido ver la lista de agenda de trabajo: \n" );
+			case 5:
+				printf("\n Ha escogido ver la lista de agenda de trabajo: \n" );
+				LeerAgenda();
 				break;
-			case 7:
+			case 6:
 				printf("Adios!\n");
 				break;
 
@@ -63,7 +56,7 @@ void menuPrincipal()
 				break;
 
 		}
-	}while(opcion!=7);
+	}while(opcion!=6);
 }
 
 int validacion(int DNI)//Devuelve 1 en caso de que exista, -1 si no hay trabajadores y 0 si no coincide con ningun trabajador
@@ -98,7 +91,7 @@ int validacionVuelo(int cod_vuelo)//Devuelve 1 en caso de que exista, -1 si no h
 	int cod_vuelo2; //El DNI que se lee desde el fichero
 	if(fichero==NULL)
 	{
-		return -1; //Devuelve -1 como senyal de que no hay trabajadores registrados
+		return -1; //Devuelve -1 como senyal de que no hay vuelo registrados
 	}else
 	{
 		while(fgets(r, 50, fichero))
@@ -107,10 +100,10 @@ int validacionVuelo(int cod_vuelo)//Devuelve 1 en caso de que exista, -1 si no h
         	sscanf(r, "%d", &cod_vuelo2);
 			if(cod_vuelo==cod_vuelo2)
 			{
-        		return 1; //En caso de que el DNI introducido coincida con el de algun trabajador      
+        		return 1; //En caso de que el DNI introducido coincida con el de algun vuelo      
         	}
      	}
-		return 0; //En caso de que el DNI NO coincida con el de ningun trabajador
+		return 0; //En caso de que el DNI NO coincida con el de ningun vuelo
 	}
 }
 
