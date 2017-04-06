@@ -3,13 +3,12 @@
 #include <stdlib.h>
 #include "estructuras.h"
 
-#define MAX_LENGTH 20
-
+#define MAX_LENGTH 200
 
 void LeerTrabajadores();
 void clear_if_needed(char *str);
 void asignarTarea();
-void guardarEnFic(int DNI, int codigo);
+void guardarEnFic(int DNI, int codigo, char *descrip);
 void LeerAgenda();
 
 void LeerTrabajadores()
@@ -43,7 +42,9 @@ void asignarTarea()
     int existe1=20;
     int codigo=0;
     char str1[20];
+    char descrip[MAX_LENGTH];
     int DNI=0;
+    char str3[MAX_LENGTH];
     printf("Lista de trabajadores disponibles:\n");
     LeerTrabajadores();
 
@@ -77,7 +78,6 @@ void asignarTarea()
         }while(codigo==0);
 
         existe1=validacionVuelo(codigo);
-        printf("Numero recibido en la validacion de vuelo %d\n", existe1);
         if(existe1==0)
         {
             printf("El vuelo no coincide con ningun vuelo\n");
@@ -88,21 +88,31 @@ void asignarTarea()
         {
             printf("\nVuelo encontrado!\n");
 
-            printf("\n Guardando en fichero... \n");
-            guardarEnFic( DNI, codigo);
+            printf("Introduzca una breve descripcion de lo que realizara el trabajador: \n\n\n");
+                   do
+                   {
+                     fgets(str3, 20, stdin);
+                     clear_if_needed(str3);
+                     sscanf(str3, "%s", &descrip);
+                   }while(descrip==NULL);
+
+
+             printf("\n Guardando en fichero... \n");
+            guardarEnFic( DNI, codigo, descrip);
             printf("\n RELACION GUARDADA!!\n");
         }
     }
 
 }
 
-void guardarEnFic(int DNI, int codigo) 
+void guardarEnFic(int DNI, int codigo, char *descrip) 
 {
     FILE *fic;
     fic = fopen("agenda.txt", "a");
 
     fprintf(fic, "\n El DNI del trabajador es: %i\n", DNI);
     fprintf(fic, "El codigo del vuelo: %i\n", codigo);
+     fprintf(fic, "La descripcion de la tarea es: %s\n", descrip);
     fprintf(fic, "------------------\n" );
     fprintf(fic, "------------------\n" );
 
@@ -112,7 +122,7 @@ void guardarEnFic(int DNI, int codigo)
 
 void LeerAgenda()
 {
-    //char *str3;
+    
     FILE *fic;
     fic = fopen("agenda.txt", "r");
     char str4[500];

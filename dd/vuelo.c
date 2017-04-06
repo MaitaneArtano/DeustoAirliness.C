@@ -116,8 +116,4 @@ void LeerVuelos()
     }
 }
 
-int calcularMedia()
-{
-    
-}
 
