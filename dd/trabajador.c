@@ -111,7 +111,7 @@ void guardarEnFic(int DNI, int codigo, char *descrip)
 
     fprintf(fic, "\n El DNI del trabajador es: %i\n", DNI);
     fprintf(fic, "El codigo del vuelo: %i\n", codigo);
-    fprintf(fic, "La descripcion de la tarea es: %s\n", descrip);
+    fprintf(fic, "Descripcion: %s\n", descrip);
     fprintf(fic, "------------------\n" );
     fprintf(fic, "------------------\n" );
 
