@@ -9,7 +9,6 @@ int validacionVuelo(int cod_vuelo);
 void menuPrincipal()
 {
 	int opcion;
-	int ok; //Para comprobar si scanf me puede formatear o no lo introducido a un entero
 
 	do
 	{
@@ -54,7 +53,6 @@ void menuPrincipal()
 			default:
 				printf("La opcion elegida es incorrecta\n");
 				break;
-
 		}
 	}while(opcion!=6);
 }
@@ -83,15 +81,15 @@ int validacion(int DNI)//Devuelve 1 en caso de que exista, -1 si no hay trabajad
 	}
 }
 
-int validacionVuelo(int cod_vuelo)//Devuelve 1 en caso de que exista, -1 si no hay trabajadores y 0 si no coincide con ningun trabajador
+int validacionVuelo(int cod_vuelo)//Devuelve 1 en caso de que exista, -1 si no hay vuelos y 0 si no coincide con ningun vuelo
 {
 	FILE *fichero;
 	fichero = fopen("vuelos.txt", "r");
 	char r[50];
-	int cod_vuelo2; //El DNI que se lee desde el fichero
+	int cod_vuelo2; //El codigo de vuelo que se lee desde el fichero
 	if(fichero==NULL)
 	{
-		return -1; //Devuelve -1 como senyal de que no hay vuelo registrados
+		return -1; //Devuelve -1 como senyal de que no hay vuelos registrados
 	}else
 	{
 		while(fgets(r, 50, fichero))
@@ -100,10 +98,10 @@ int validacionVuelo(int cod_vuelo)//Devuelve 1 en caso de que exista, -1 si no h
         	sscanf(r, "%d", &cod_vuelo2);
 			if(cod_vuelo==cod_vuelo2)
 			{
-        		return 1; //En caso de que el DNI introducido coincida con el de algun vuelo      
+        		return 1; //En caso de que el codigo de vuelo introducido coincida con el de algun vuelo      
         	}
      	}
-		return 0; //En caso de que el DNI NO coincida con el de ningun vuelo
+		return 0; //En caso de que el codigo de vuelo NO coincida con el de ningun vuelo
 	}
 }
 
